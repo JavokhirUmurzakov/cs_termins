@@ -1,0 +1,837 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <title> {{news_id.title}}</title>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--::::: FABICON ICON :::::::-->
+     <link rel="icon" href="{% static 'images/logo-bg-remove.png' %}">
+    <!--::::: ALL CSS FILES :::::::-->
+    <link rel="stylesheet" href="{% static 'css/plugins/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/modal-video.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/stellarnav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+</head>
+
+<body class="theme-3 theme3_bg">
+
+    <style>
+        .info-glav {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .sert-glav {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .index-glav {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .information .info-item {
+            position: relative;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+            padding: 10px 10px;
+            margin-bottom: -1px;
+        }
+
+        .info-item {
+            text-align: -webkit-match-parent;
+        }
+
+        .information {
+            list-style-type: disc;
+        }
+
+        .information .info-item {
+            border-width: 1px 0;
+            border-radius: 0;
+        }
+
+        .info-heading .info-title {
+            display: block;
+            margin: 0;
+            color: #333;
+            border-color: #ddd;
+            padding: 10px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .blank-button {
+            border: none;
+            padding: 10px;
+            background-color: #2e91fd;
+            color: white;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        .blank-button:hover {
+            background-color: #005cbf;
+        }
+
+        .box_container {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+        }
+
+        .box_span {
+            padding: 0.35em 0.65em;
+            color: white;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 618px) {
+            .box_container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .box_span {
+                margin-top: 10px;
+            }
+            .foot_media_stye {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 386px) {
+            .box_container {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .box_span {
+                margin-top: 10px;
+            }
+        }
+    </style>
+
+
+
+
+    <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content .drop-a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content .drop-a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logoImg {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .logoMedia {
+            display: none;
+            background-color: #0a53be;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logoMedia {
+                display: block;
+            }
+        }
+    </style>
+
+    <div class="border_black"></div>
+    <!--::::: LOGO AREA START  :::::::-->
+    <div class="logo_area white_bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="logoImg">
+                    <div class="logo">
+                        <a href="/uz/">
+                       <img src="{% static 'images/logo-bg-remove.png' %}" alt="sayt logosi">
+                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 align-self-center offset-lg-1">
+                    <div class="temp d-none d-lg-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: LOGO AREA END :::::::-->
+     <!--::::: MENU AREA START  :::::::-->
+    <div class="container">
+        <div class="main-menu">
+            <div class="main-nav clearfix is-ts-sticky">
+                <div class="row justify-content-between">
+                    <div class="col-4 col-lg-9 align-self-center">
+                        <div class="newsprk_nav stellarnav">
+                            <ul id="newsprk_menu">
+                                <li><a href="{% url 'home_page' %}">Bosh sahifa</a></li>
+                                <li><a href="{% url 'articles_page' %}">Maqolalar</a></li>
+                                <li><a href="{% 'termins_page' 1 %}">Glossary</a></li>
+                                <li><a href="{% url 'blogs_page' %}">Yangliklar</a></li>
+                                <li><a href="{% url 'contact_page' %}">Aloqa</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-8 col-lg-3 text-right align-self-center">
+                        <div class="date3">
+<!--                            select language form-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: MENU AREA END :::::::-->
+
+
+
+    <!--::::: TOTAL AREA START :::::::-->
+    <div class="total3 mb30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <h4 class="widget-title">Hozirgi son</h4>
+
+                        <div class="single_post post_type12 type20">
+                            <div class="post_img border-radious5">
+                                <div class="img_wrap">
+                                    <a href="media/pdf/hozirgison/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F1_sYD5SRm.bmp">
+                                                <img src="media/images/hozirgison/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F1_mWFmyhD.bmp" alt="">
+                                            </a>
+                                </div>
+                            </div>
+                            <div class="single_post_text">
+                                <h4>
+                                    <a href="media/pdf/hozirgison/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F1_sYD5SRm.bmp">
+                                        <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px; text-align:center"><span style="color:#2980b9"><strong><span style="font-size:16px">&nbsp;&ldquo;Uzscience International Journal of Multidisciplinary Research&rdquo; xalqaro ilmiy jurnali&nbsp; &nbsp; &nbsp;</span></strong>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </h4>
+                                <div class="row">
+                                    <div class="col-6 align-self-center">
+                                        <div class="meta_col">
+                                            <p>4-Oktabr, 2024-yil</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 text-right align-self-center">
+                                        <ul class="meta_share inline">
+                                            <li><a href="media/pdf/hozirgison/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F1_sYD5SRm.bmp" download="pdf/hozirgison/Публикация1_sYD5SRm.bmp"><i
+                                                            class="fa fa-download"
+                                                            aria-hidden="true"> Yuklab olish</i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="post-p">
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px; text-align:center"><span style="font-size:14px"><span style="font-family:Georgia,serif"><span style="color:#2c3e50">Ushbu jurnalda O&#39;zbekiston va chet davlatlar olimlari ilmiy maqolalari chop etiladi.</span><br />
+                                        <span style="color:#2c3e50"><strong>Ushbu jurnal OAK ro&#39;yxatida mavjud xalqaro bazalarda indekslanib, elektron&nbsp;&nbsp;holatda nashr etib boriladi.</strong></span><br />
+                                        <span style="color:#2980b9">Jurnalning rasmiy tillari:</span> <em>o&#39;zbek, rus,ingliz</em><br />
+                                        <em>Jurnal telegram kanali:</em> &nbsp;<span style="color:#1abc9c">https://t.me/Ilmiy_izlanuvchan_yoshlar</span><br />
+                                        <strong>Maqola muallifiga BEPUL qabul qilinganlik haqida sertifikat, indekslanganligi haqida ma&#39;lumotnoma va mualliflik guvohnomasi beriladi.</strong><br />
+                                        <em>Jurnal har oyda nashr qilinadi.<br />
+Maqolalar yuborish uchun: </em>&nbsp;<span style="color:#3498db">@khamidov_802</span><br /> &nbsp;
+                                        <span style="color:#3498db">xamidovdoston802@gmail.com</span></span>
+                                        </span>
+                                    </div>
+                                </p>
+                                <hr>
+                                <p class="post-p"><b>Muallif:</b>
+                                    <p style="text-align:center"><span style="font-size:16px"><span style="font-family:Georgia,serif"><span style="color:#2c3e50">Doston Xamidov</span></span>
+                                        </span>
+                                    </p>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+
+
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <h3>Oxirgi Maqolalar</h3>
+                    </div>
+
+                    <br>
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <div class="single_post">
+                            <div class="single_post_text">
+                                <h4>
+                                    <a target="_blank" style="color: #7abce6;" href="media/pdf/maqola/Sobirjonova_Umida.pdf">
+                                        <p style="text-align:center"><span style="font-size:18px"><strong><span style="font-family:Georgia,serif"><span style="color:#3498db">QO&lsquo;G&lsquo;IRCHOQBOZLIKNING ASOSIY SPESIFIKASI VA TARIXI</span></span>
+                                            </strong>
+                                            </span>
+                                        </p>
+                                    </a>
+                                </h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 align-self-center">
+                                        <br>
+                                        <div class="meta_col">
+                                            <h3 style="margin-top: -1rem;">
+                                                <p style="text-align:center"><strong><span style="font-family:Georgia,serif"><span style="font-size:16px">Sobirjonova Umida</span></span></strong></p>
+                                            </h3>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-6 text-right align-self-center">
+                                        <ul style="padding: 0;" class="meta_share inline">
+                                            <li>
+                                                <a target="_blank" href="media/pdf/maqola/Sobirjonova_Umida.pdf">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">PDF</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://doi.org/10.5281/zenodo.13814210">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">DOI</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a style="font-weight: 400;" target="_blank" href="media/pdf/maqola/Sobirjonova_Umida.pdf">
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><span style="font-size:14px"><span style="font-family:Georgia,serif">Annotatsiya: Ushbu maqolada teatr san&rsquo;atining qo&lsquo;g&lsquo;irchoqbozlik turi, kelib chiqish tarixi, spesifikasi, san&rsquo;at turlari ichida madaniy-ma&rsquo;rifiy ahamiyati borasida so&lsquo;z yuritilgan. </span></span>
+                                    </div>
+
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><span style="font-size:14px"><span style="font-family:Georgia,serif">Kalit so&lsquo;zlar: qo&lsquo;g&lsquo;irchoqbozlik, spesifika, san&rsquo;at, madaniy-ma&rsquo;rifiy, teatr</span></span>
+                                    </div>
+                                </a>
+                                <div class="space-15"></div>
+                                <hr>
+                                <h4 class="box_container" style="font-weight: 400;">
+                                    <span class="box_span" style="background-color: #7b8a8b;"><i
+                                                    class="fa fa-calendar-alt"></i> 20.09.2024</span>
+                                    <span class="box_span" style="background-color: #7b8a8b;">Volume 2 Issiue 9 </span>
+                                    <span class="box_span" style="background-color: #4298db;"><a target="_blank"
+                                                                                                         style="font-weight: 400; color: white;"
+                                                                                                         href="media/pdf/maqola/Sobirjonova_Umida.pdf"><i
+                                                    class="fa fa-eye"></i> Batafsil ko'rish</a></span>
+                                    <span class="box_span" style="background-color: #68be9c;"><a
+                                                    style="font-weight: 400; color: white;" href="media/pdf/maqola/Sobirjonova_Umida.pdf"
+                                                    download="pdf/maqola/Sobirjonova_Umida.pdf"><i
+                                                    class="fa fa-download"></i> Yuklab olish</a></span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <div class="single_post">
+                            <div class="single_post_text">
+                                <h4>
+                                    <a target="_blank" style="color: #7abce6;" href="media/pdf/maqola/Orasta_Davronova__maqola.pdf">
+                                        <p style="text-align:center"><span style="color:#3498db"><strong><span style="font-size:14pt"><span style="font-family:&quot;Times New Roman&quot;,serif">FIZIKA VA ASTRONOMIYA FANLARINI MAKTABLARDA O&#39;RGATISH USULLARINI YANADA TAKOMILLASHTIRISH</span></span>
+                                            </strong>
+                                            </span>
+                                        </p>
+                                    </a>
+                                </h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 align-self-center">
+                                        <br>
+                                        <div class="meta_col">
+                                            <h3 style="margin-top: -1rem;">
+                                                <p style="text-align:center"><span style="font-size:18px"><span style="font-family:Georgia,serif"><span style="color:black"><strong>Orasta Davronova&nbsp; </strong></span></span>
+                                                    </span>
+                                                </p>
+                                            </h3>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-6 text-right align-self-center">
+                                        <ul style="padding: 0;" class="meta_share inline">
+                                            <li>
+                                                <a target="_blank" href="media/pdf/maqola/Orasta_Davronova__maqola.pdf">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">PDF</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="None">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">DOI</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a style="font-weight: 400;" target="_blank" href="media/pdf/maqola/Orasta_Davronova__maqola.pdf">
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><span style="font-family:Georgia,serif"><span style="font-size:14pt"><span style="color:black"><strong>Annotatsiya.</strong> Ta&#39;lim tizimida har birpredmet bo&#39;yicha o&#39;qitish va o&#39;rgatish usullarining eng yuqori ko&#39;rsatkichlilarini tanlash shu fanni o&#39;rganishda katta yutuqlarga erishishga imkon beradi. Ayni shundan keliv chiqib, mazkur maqola fizika va astronomiya fanlarini maktablarda o&#39;rgatish usullari va ularniyanada takomillashtirish masalasiga bag&#39;ishlandi.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>
+                                        </span>
+                                    </div>
+
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><span style="font-family:Georgia,serif"><span style="font-size:14pt"><span style="color:black">&nbsp;<strong>Kalit so&#39;z va iboralar:</strong> o&#39;qitish usullari, o&#39;rgatish usullari, fizika, astronomiya, demonstratsion tajribalar, o&#39;qituvchi, o&#39;quvchi.</span></span>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div class="space-15"></div>
+                                <hr>
+                                <h4 class="box_container" style="font-weight: 400;">
+                                    <span class="box_span" style="background-color: #7b8a8b;"><i
+                                                    class="fa fa-calendar-alt"></i> 09.09.2024</span>
+                                    <span class="box_span" style="background-color: #7b8a8b;">Volume 2 Issiue 9 </span>
+                                    <span class="box_span" style="background-color: #4298db;"><a target="_blank"
+                                                                                                         style="font-weight: 400; color: white;"
+                                                                                                         href="media/pdf/maqola/Orasta_Davronova__maqola.pdf"><i
+                                                    class="fa fa-eye"></i> Batafsil ko'rish</a></span>
+                                    <span class="box_span" style="background-color: #68be9c;"><a
+                                                    style="font-weight: 400; color: white;" href="media/pdf/maqola/Orasta_Davronova__maqola.pdf"
+                                                    download="pdf/maqola/Orasta_Davronova__maqola.pdf"><i
+                                                    class="fa fa-download"></i> Yuklab olish</a></span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <div class="single_post">
+                            <div class="single_post_text">
+                                <h4>
+                                    <a target="_blank" style="color: #7abce6;" href="media/pdf/maqola/Zulfiya_Shoabdullayeva.pdf">
+                                        <p style="text-align:center"><span style="color:#3498db"><span style="font-size:18px"><strong><span style="font-family:Georgia,serif">Propagandist for Justice</span></strong>
+                                            </span>
+                                            </span>
+                                        </p>
+                                    </a>
+                                </h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 align-self-center">
+                                        <br>
+                                        <div class="meta_col">
+                                            <h3 style="margin-top: -1rem;">
+                                                <p style="text-align:center"><span style="font-size:16px"><span style="font-family:Georgia,serif"><strong>Shoabdullaeva Zulfiya Shorakhimovna</strong></span></span>
+                                                </p>
+                                            </h3>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-6 text-right align-self-center">
+                                        <ul style="padding: 0;" class="meta_share inline">
+                                            <li>
+                                                <a target="_blank" href="media/pdf/maqola/Zulfiya_Shoabdullayeva.pdf">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">PDF</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://doi.org/10.5281/zenodo.13732172">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">DOI</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a style="font-weight: 400;" target="_blank" href="media/pdf/maqola/Zulfiya_Shoabdullayeva.pdf">
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><span style="font-size:14px"><span style="font-family:Georgia,serif">Annotation. This article is about the work of Mukimi. The peculiarities of Mukimi&#39;s lyrics are analyzed. Examples from the poet&#39;s works are given. The poet always wants justice. Examples of his works in the struggle for truth and justice are given. Keywords: analysis, poet, poetry, problem, pain, psychologism.</span></span>
+                                    </div>
+                                </a>
+                                <div class="space-15"></div>
+                                <hr>
+                                <h4 class="box_container" style="font-weight: 400;">
+                                    <span class="box_span" style="background-color: #7b8a8b;"><i
+                                                    class="fa fa-calendar-alt"></i> 08.09.2024</span>
+                                    <span class="box_span" style="background-color: #7b8a8b;">Volume 2 Issiue 9 </span>
+                                    <span class="box_span" style="background-color: #4298db;"><a target="_blank"
+                                                                                                         style="font-weight: 400; color: white;"
+                                                                                                         href="media/pdf/maqola/Zulfiya_Shoabdullayeva.pdf"><i
+                                                    class="fa fa-eye"></i> Batafsil ko'rish</a></span>
+                                    <span class="box_span" style="background-color: #68be9c;"><a
+                                                    style="font-weight: 400; color: white;" href="media/pdf/maqola/Zulfiya_Shoabdullayeva.pdf"
+                                                    download="pdf/maqola/Zulfiya_Shoabdullayeva.pdf"><i
+                                                    class="fa fa-download"></i> Yuklab olish</a></span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <div class="single_post">
+                            <div class="single_post_text">
+                                <h4>
+                                    <a target="_blank" style="color: #7abce6;" href="media/pdf/maqola/Ikromova_Madina.pdf">
+                                        <p style="text-align:center"><span style="color:#3498db"><strong><span style="font-family:Georgia,serif"><span style="font-size:18px">MAHMUDXO&lsquo;JA BEHBUDIYNING TIL HAQIDAGI QARASHLARI&nbsp;</span></span>
+                                            </strong>
+                                            </span>
+                                        </p>
+                                    </a>
+                                </h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 align-self-center">
+                                        <br>
+                                        <div class="meta_col">
+                                            <h3 style="margin-top: -1rem;">
+                                                <p style="text-align:center"><strong><span style="font-family:Georgia,serif"><span style="font-size:16px">Ikromova Madina&nbsp;<br />
+&nbsp;<br />
+&nbsp;</span></span></strong></p>
+                                            </h3>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-6 text-right align-self-center">
+                                        <ul style="padding: 0;" class="meta_share inline">
+                                            <li>
+                                                <a target="_blank" href="media/pdf/maqola/Ikromova_Madina.pdf">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">PDF</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="None">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">DOI</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a style="font-weight: 400;" target="_blank" href="media/pdf/maqola/Ikromova_Madina.pdf">
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px; text-align:justify"><span style="font-family:Georgia,serif"><span style="font-size:16px">ANNOTATSIYA; Ushbu maqolada bugungi kunda tilimiz va uning atrofida kechayotgan bahs va munozaralar tahlili va natijalari. Shuningdek atoqli jadid arbobi Mahmudxo&lsquo;ja Behbudiyning til masalasidagi qarashlari o&lsquo;rin olgan.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; KALIT SO&lsquo;ZLAR; Kitob-ul atfol, Volostnoyxona, Qozixona, Viveska, Ibroniy, Yuhanna, Sholom, Niqula, O&lsquo;rxaydmiyus.&nbsp;</span></span>
+                                    </div>
+                                </a>
+                                <div class="space-15"></div>
+                                <hr>
+                                <h4 class="box_container" style="font-weight: 400;">
+                                    <span class="box_span" style="background-color: #7b8a8b;"><i
+                                                    class="fa fa-calendar-alt"></i> 31.05.2024</span>
+                                    <span class="box_span" style="background-color: #7b8a8b;">Volume 2 Issiue 5 </span>
+                                    <span class="box_span" style="background-color: #4298db;"><a target="_blank"
+                                                                                                         style="font-weight: 400; color: white;"
+                                                                                                         href="media/pdf/maqola/Ikromova_Madina.pdf"><i
+                                                    class="fa fa-eye"></i> Batafsil ko'rish</a></span>
+                                    <span class="box_span" style="background-color: #68be9c;"><a
+                                                    style="font-weight: 400; color: white;" href="media/pdf/maqola/Ikromova_Madina.pdf"
+                                                    download="pdf/maqola/Ikromova_Madina.pdf"><i
+                                                    class="fa fa-download"></i> Yuklab olish</a></span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <div class="single_post">
+                            <div class="single_post_text">
+                                <h4>
+                                    <a target="_blank" style="color: #7abce6;" href="media/pdf/maqola/2Ikromova_Madina.pdf">
+                                        <p style="text-align:center"><span style="color:#3498db"><strong><span style="font-family:Georgia,serif"><span style="font-size:20px">MAKTABGACHA TA&rsquo;LIMNING YOSHLAR HAYOTIDAGI AHAMIYATI&nbsp;</span></span>
+                                            </strong>
+                                            </span>
+                                        </p>
+                                    </a>
+                                </h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 align-self-center">
+                                        <br>
+                                        <div class="meta_col">
+                                            <h3 style="margin-top: -1rem;">
+                                                <p style="text-align:center"><strong><span style="font-family:Georgia,serif"><span style="font-size:16px">Ikromova Madina&nbsp;</span></span></strong></p>
+                                            </h3>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-6 text-right align-self-center">
+                                        <ul style="padding: 0;" class="meta_share inline">
+                                            <li>
+                                                <a target="_blank" href="media/pdf/maqola/2Ikromova_Madina.pdf">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">PDF</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://doi.org/10.5281/zenodo.11402395">
+                                                            <button class="blank-button">
+                                                                <h4 style="color: white;">DOI</h4>
+                                                            </button>
+                                                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a style="font-weight: 400;" target="_blank" href="media/pdf/maqola/2Ikromova_Madina.pdf">
+                                    <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:14.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Annotatsiya.</span></span>
+                                        </strong><span style="font-size:14.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"> Ushbu maqolada mamlakatimizda maktabgacha ta&rsquo;lim sohasida amalga oshirilayotgan yagona davlat siyosati, bu borada erishilgan yutuqlar, hamda soha oldida turgan, o&lsquo;z yechimini kutayotgan masalalar borasida atroflicha fikr yuritilgan.</span></span>
+                                        </span>
+                                        </span>
+                                    </p>
+
+                                    <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:14.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Kalit so&lsquo;zlar.</span></span>
+                                        </strong><span style="font-size:14.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"> Yusuf Xos Hojib, Bola tarbiyasi, Lesgaft, MTT</span></span>
+                                        </span>
+                                        </span>
+                                    </p>
+                                </a>
+                                <div class="space-15"></div>
+                                <hr>
+                                <h4 class="box_container" style="font-weight: 400;">
+                                    <span class="box_span" style="background-color: #7b8a8b;"><i
+                                                    class="fa fa-calendar-alt"></i> 31.05.2024</span>
+                                    <span class="box_span" style="background-color: #7b8a8b;">Volume 2 Issiue 5 </span>
+                                    <span class="box_span" style="background-color: #4298db;"><a target="_blank"
+                                                                                                         style="font-weight: 400; color: white;"
+                                                                                                         href="media/pdf/maqola/2Ikromova_Madina.pdf"><i
+                                                    class="fa fa-eye"></i> Batafsil ko'rish</a></span>
+                                    <span class="box_span" style="background-color: #68be9c;"><a
+                                                    style="font-weight: 400; color: white;" href="media/pdf/maqola/2Ikromova_Madina.pdf"
+                                                    download="pdf/maqola/2Ikromova_Madina.pdf"><i
+                                                    class="fa fa-download"></i> Yuklab olish</a></span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-15"></div>
+                    <a href="/uz/maqolalar/" class="showmore">Barcha maqolalarni ko'rish</a>
+                    <br>
+                    <br>
+
+                </div>
+
+
+
+                <div class="col-lg-4">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-12">
+
+
+                            <div class="finance mb30 white_bg border-radious5 padding20 sm-mt30 info-glav">
+                                <div class="heading info-heading">
+                                    <h3 class="widget-title info-title">Malumot</h3>
+                                </div>
+                                <div class="single_post mb30 type18 d-md-none d-lg-block">
+                                    <div class="post_img">
+                                        <div class="img_wrap">
+                                            <br>
+                                            <ul class="information">
+
+                                                <li class="info-item"><a style="color: #1390fc" href="/about/">Asosiy sahifa</a>
+                                                </li>
+
+                                                <li class="info-item"><a style="color: #1390fc" href="/about/">Biz haqimizda</a>
+                                                </li>
+
+                                                <li class="info-item"><a style="color: #1390fc" href="/contact/">Bizga xabar yuborish</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="finance mb30 white_bg border-radious5 padding20 sm-mt30 index-glav">
+                                <div class="heading">
+                                    <h3 class="widget-title">Indexing</h3>
+                                </div>
+                                <div class="single_post mb30 type18 d-md-none d-lg-block">
+                                    <div class="post_img">
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://it-park.uz/">
+                                    <img src="{% static 'images/itpark.jpg' %}" alt="google scholar">
+                                </a></div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.securityweek.com/">
+                                    <img src="{% static 'images/cweek.png' %}" alt="cyberlelinka">
+                                </a>
+                                        </div>
+
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.csec.uz/">
+                                    <img src="{% static 'images/csec.png' %}" alt="">
+                                </a>
+                                        </div>
+
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.bleepingcomputer.com/">
+                                    <img src="{% static 'images/bleeping.png' %}" alt="">
+                                </a>
+                                        </div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.cve.org/Media/News/AllNews">
+                                    <img src="{% static 'images/cve.jpeg' %}" alt="">
+                                </a>
+                                        </div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://cybersecuritynews.com/">
+                                    <img src="{% static 'images/cnews.png' %}" alt="">
+
+                                </a>
+                                        </div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://thehackernews.com/">
+                                    <img src="{% static 'images/hack.png' %}" alt="">
+
+                                </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: TOTAL AREA END :::::::-->
+
+    <style>
+        .information .info-item {
+            position: relative;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+            padding: 10px 10px;
+            margin-bottom: -1px;
+        }
+
+        .info-item {
+            text-align: -webkit-match-parent;
+        }
+
+        .information {
+            list-style-type: disc;
+        }
+
+        .information .info-item {
+            border-width: 1px 0;
+            border-radius: 0;
+        }
+
+        .info-heading .info-title {
+            display: block;
+            margin: 0;
+            color: #333;
+            border-color: #ddd;
+            padding: 10px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+    </style>
+
+
+    <div class="space-20"></div>
+    <!--::::: FOOTER AREA START :::::::-->
+     <div class="copyright footer white_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center foot_media_style">
+                        <p style="color: #17222B;">Barcha huquqlar himoyalangan.</p>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="copyright_menus text-right">
+                            <div class="copyright_menu inline foot_media_style" style="margin-bottom:20px;">
+                                <a style="color: black;" href="https://www.javokhir-umurzakov.uz/">Developed by www.javokhir-umurzakov.uz</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="{% static 'js/plugins/jquery.2.1.0.min.js' %}"></script>
+    <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.nav.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery-modal-video.min.js' %}"></script>
+    <script src="{% static 'js/plugins/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/plugins/popper.min.js' %}"></script>
+    <script src="{% static 'js/plugins/stellarnav1.js' %}"></script>
+    <script src="{% static 'js/plugins/circle-progress.js' %}"></script>
+    <script src="{% static 'js/plugins/wow.min.js' %}"></script>
+    <script src="{% static 'js/plugins/slick.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

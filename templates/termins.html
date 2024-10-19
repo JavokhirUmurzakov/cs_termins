@@ -1,0 +1,475 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <title> Kiberxavfsizlik | Lug'at </title>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--::::: FABICON ICON :::::::-->
+    <link rel="icon" href="{% static 'images/logo-bg-remove.png' %}">
+    <!--::::: ALL CSS FILES :::::::-->
+    <link rel="stylesheet" href="{% static 'css/plugins/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/modal-video.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/stellarnav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+</head>
+
+<body class="theme-3 theme3_bg">
+
+    <style>
+        .info-glav {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .sert-glav {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .index-glav {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .information .info-item {
+            position: relative;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+            padding: 10px 10px;
+            margin-bottom: -1px;
+        }
+
+        .info-item {
+            text-align: -webkit-match-parent;
+        }
+
+        .information {
+            list-style-type: disc;
+        }
+
+        .information .info-item {
+            border-width: 1px 0;
+            border-radius: 0;
+        }
+
+        .info-heading .info-title {
+            display: block;
+            margin: 0;
+            color: #333;
+            border-color: #ddd;
+            padding: 10px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .blank-button {
+            border: none;
+            padding: 10px;
+            background-color: #2e91fd;
+            color: white;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        .blank-button:hover {
+            background-color: #005cbf;
+        }
+
+        .box_container {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+        }
+
+        .box_span {
+            padding: 0.35em 0.65em;
+            color: white;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 618px) {
+            .box_container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .box_span {
+                margin-top: 10px;
+            }
+            .foot_media_stye {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 386px) {
+            .box_container {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .box_span {
+                margin-top: 10px;
+            }
+        }
+    </style>
+
+
+
+
+    <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content .drop-a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content .drop-a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logoImg {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .logoMedia {
+            display: none;
+            background-color: #0a53be;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logoMedia {
+                display: block;
+            }
+        }
+    </style>
+
+    <div class="border_black"></div>
+    <!--::::: LOGO AREA START  :::::::-->
+    <div class="logo_area white_bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="logoImg">
+                    <div class="logo">
+                        <a href="/uz/">
+                        <img src="{% static 'images/logo-bg-remove.png' %}" alt="sayt logosi">
+                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="signup_form header_search3">
+                        <form action="/termins/1/" method="GET">
+                            <input name="q" value="" class="signup" type="text" placeholder="lug'atlarni topish ...">
+                            <input type="submit" class="cbtn" value="Qidirish">
+                        </form>
+                    </div>
+                </div>
+<!--                <div class="col-lg-2 align-self-center offset-lg-1">-->
+<!--                    <div class="temp d-none d-lg-block">-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+    <!--::::: LOGO AREA END :::::::-->
+     <!--::::: MENU AREA START  :::::::-->
+    <div class="container">
+        <div class="main-menu">
+            <div class="main-nav clearfix is-ts-sticky">
+                <div class="row justify-content-between">
+                    <div class="col-4 col-lg-9 align-self-center">
+                        <div class="newsprk_nav stellarnav">
+                            <ul id="newsprk_menu">
+                                <li><a href="{% url 'home_page' %}">Bosh sahifa</a></li>
+                                <li><a href="{% url 'articles_page' %}">Maqolalar</a></li>
+                                <li><a href="{% url 'termins_page' 1 %}">Glossary</a></li>
+                                <li><a href="{% url 'blogs_page' %}">Yangliklar</a></li>
+                                <li><a href="{% url 'contact_page' %}">Aloqa</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+<!--                    <div class="col-8 col-lg-3 text-right align-self-center">-->
+<!--                        <div class="date3">-->
+<!--&lt;!&ndash;                            select language form&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: MENU AREA END :::::::-->
+
+
+
+
+    <!--::::: TOTAL AREA START :::::::-->
+    <div class="total3 mb30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+
+                    <br>
+
+
+                    <div class="business3 padding20 white_bg border-radious5">
+                        <h3>Lug'at</h3>
+                    </div>
+
+                    <br>
+                    {% if q is None %}
+                    <p></p>
+                    {% elif q %}
+                    <p><p style="color:red;">{{q}}</p>ga mos natjalar...</p>
+                    {% endif %}
+                    {% for i in termin %}
+                    <div class="business3 padding20 white_bg border-radious5" style="margin-bottom:20px;">
+                        <div class="single_post">
+                            <div class="single_post_text">
+                                <h4>
+                                    <a target="_blank" style="color: #7abce6;" href="media/pdf/maqola/Sobirjonova_Umida.pdf">
+                                        <p style="text-align:center"><span style="font-size:18px"><strong><span style="font-family:Georgia,serif"><span style="color:#3498db">{{i.name}}</span></span>
+                                            </strong>
+                                            </span>
+                                        </p>
+                                    </a>
+                                </h4>
+                                <hr>
+                                    <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><span style="font-size:14px"><span style="font-family:Georgia,serif">{{i.description|safe}}</span></span>
+                                    </div>
+                                <div class="space-15"></div>
+                                <h4 class="box_container" style="font-weight: 400;">
+                                    <span class="box_span" style="background-color: #7b8a8b;"><i
+                                                    class="fa fa-calendar-alt"></i> 20.09.2024</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="space-15"></div>
+
+                  {% include 'pagination.html' %}
+                    <br>
+                    <br>
+
+                </div>
+
+
+
+                <div class="col-lg-4">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-12">
+
+
+                            <div class="finance mb30 white_bg border-radious5 padding20 sm-mt30 info-glav">
+                                <div class="heading info-heading">
+                                    <h3 class="widget-title info-title">Malumot</h3>
+                                </div>
+                                <div class="single_post mb30 type18 d-md-none d-lg-block">
+                                    <div class="post_img">
+                                        <div class="img_wrap">
+                                            <br>
+                                            <ul class="information">
+
+                                                <li class="info-item"><a style="color: #1390fc" href="/about/">Asosiy sahifa</a>
+                                                </li>
+
+                                                <li class="info-item"><a style="color: #1390fc" href="/about/">Biz haqimizda</a>
+                                                </li>
+
+                                                <li class="info-item"><a style="color: #1390fc" href="/contact/">Bizga xabar yuborish</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="finance mb30 white_bg border-radious5 padding20 sm-mt30 index-glav">
+                                <div class="heading">
+                                    <h3 class="widget-title">Foydali havolalar</h3>
+                                </div>
+                                <div class="single_post mb30 type18 d-md-none d-lg-block">
+                                    <div class="post_img">
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://it-park.uz/">
+                                    <img src="{% static 'images/itpark.jpg' %}" alt="google scholar">
+                                </a></div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.securityweek.com/">
+                                    <img src="{% static 'images/cweek.png' %}" alt="cyberlelinka">
+                                </a>
+                                        </div>
+
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.csec.uz/">
+                                    <img src="{% static 'images/csec.png' %}" alt="">
+                                </a>
+                                        </div>
+
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.bleepingcomputer.com/">
+                                    <img src="{% static 'images/bleeping.png' %}" alt="">
+                                </a>
+                                        </div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://www.cve.org/Media/News/AllNews">
+                                    <img src="{% static 'images/cve.jpeg' %}" alt="">
+                                </a>
+                                        </div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://cybersecuritynews.com/">
+                                    <img src="{% static 'images/cnews.png' %}" alt="">
+
+                                </a>
+                                        </div>
+
+                                        <div style="margin-top: 30px;" class="img_wrap">
+                                            <a href="https://thehackernews.com/">
+                                    <img src="{% static 'images/hack.png' %}" alt="">
+
+                                </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--::::: TOTAL AREA END :::::::-->
+
+    <style>
+        .information .info-item {
+            position: relative;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+            padding: 10px 10px;
+            margin-bottom: -1px;
+        }
+
+        .info-item {
+            text-align: -webkit-match-parent;
+        }
+
+        .information {
+            list-style-type: disc;
+        }
+
+        .information .info-item {
+            border-width: 1px 0;
+            border-radius: 0;
+        }
+
+        .info-heading .info-title {
+            display: block;
+            margin: 0;
+            color: #333;
+            border-color: #ddd;
+            padding: 10px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+    </style>
+
+
+
+
+    <div class="space-20"></div>
+    <!--::::: FOOTER AREA START :::::::-->
+    <div class="copyright footer white_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center foot_media_style">
+                        <p style="color: #17222B;">Barcha huquqlar himoyalangan.</p>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="copyright_menus text-right">
+                            <div class="copyright_menu inline foot_media_style" style="margin-bottom:20px;">
+                                <a style="color: black;" href="https://www.javokhir-umurzakov.uz/">Developed by www.javokhir-umurzakov.uz</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="{% static 'js/plugins/jquery.2.1.0.min.js' %}"></script>
+    <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.nav.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/plugins/jquery-modal-video.min.js' %}"></script>
+    <script src="{% static 'js/plugins/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/plugins/popper.min.js' %}"></script>
+    <script src="{% static 'js/plugins/stellarnav1.js' %}"></script>
+    <script src="{% static 'js/plugins/circle-progress.js' %}"></script>
+    <script src="{% static 'js/plugins/wow.min.js' %}"></script>
+    <script src="{% static 'js/plugins/slick.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
